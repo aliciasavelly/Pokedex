@@ -1,11 +1,10 @@
 import React from 'react';
-// import { requestAllPokemon } from '../../actions/pokemon_actions';
 import PokemonIndexItem from './pokemon_index_item';
 
 class PokemonIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   componentDidMount() {
     this.props.requestAllPokemon();
