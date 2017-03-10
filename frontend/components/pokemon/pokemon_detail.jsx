@@ -17,7 +17,9 @@ class PokemonDetail extends React.Component {
     if (!!this.props.poke.name) {
       let poke = this.props.poke;
       let moves = poke.moves.join(', ');
-      let items = poke.items.map ((item, idx) => {
+      // debugger;
+      let items = poke.items.map((item, idx) => {
+        // debugger;
         return <li key={idx}>{item.name}</li>
       });
       // debugger;
@@ -37,6 +39,10 @@ class PokemonDetail extends React.Component {
           </ul>
           <section className="pokemon-items">
             <ul>
+              Items: {items}
+            </ul>
+            <div>before this.props.children!!</div>
+            <ul>
               {this.props.children}
             </ul>
           </section>
@@ -50,37 +56,3 @@ class PokemonDetail extends React.Component {
 }
 
 export default PokemonDetail;
-
-/*
-Object
-attack
-:
-84
-defense
-:
-65
-id
-:
-122
-image_url
-:
-"148.svg"
-items
-:
-Array[3]
-moves
-:
-Array[2]
-name
-:
-"Dragonair"
-poke_type
-:
-"dragon"
-__proto__
-:
-Object
-
-
-
-*/
