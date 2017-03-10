@@ -14,13 +14,15 @@ export const receiveOnePokemon = poke => ({
   poke
 })
 
+//thunk action creator
 export const requestAllPokemon = () => (dispatch) => {
   return APIUtil.fetchAllPokemon()
     .then(pokemon => dispatch(receiveAllPokemon(pokemon)));
 }
 
-export const requestOnePokemon = (poke) => (dispatch) => {
-  return APIUtil.fetchOnePokemon(poke)
+//thunk action creator
+export const requestOnePokemon = (pokeId) => (dispatch) => {
+  return APIUtil.fetchOnePokemon(pokeId)
     .then(poke => dispatch(receiveOnePokemon(poke)));
 }
 
