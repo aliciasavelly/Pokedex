@@ -32,8 +32,8 @@ export const requestOnePokemon = (pokeId) => (dispatch) => {
     .then(poke => dispatch(receiveOnePokemon(poke)));
 }
 
-export const requestOneItem = (itemId) => (dispatch) => {
-  return APIUtil.fetchOneItem(itemId)
+export const requestOneItem = (pokeId, itemId) => (dispatch) => {
+  return APIUtil.fetchOneItem(pokeId, itemId)
     .then(item => dispatch(receiveOneItem(item)))
 }
 

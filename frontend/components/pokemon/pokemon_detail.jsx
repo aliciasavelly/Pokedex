@@ -37,7 +37,7 @@ class PokemonDetail extends React.Component {
           </ul>
           <section className="pokemon-items">
             <ul>
-              {items}
+              {this.props.children}
             </ul>
           </section>
         </section>
