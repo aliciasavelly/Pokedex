@@ -11,3 +11,10 @@ export const fetchOnePokemon = (pokeId) => (
     url: `api/pokemon/${pokeId}`
   })
 )
+
+export const fetchOneItem = (pokeId, itemId) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/pokemon/${pokeId}/item/${itemId}`
+  })
+)

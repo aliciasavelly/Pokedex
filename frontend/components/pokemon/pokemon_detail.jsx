@@ -13,18 +13,38 @@ class PokemonDetail extends React.Component {
   }
 
   render () {
-    let poke = this.props.poke;
-
-    console.log(poke.image_url);
-    return (
-      <section className="pokemon-detail">
-        <figure>
-          <img src={`${poke.image_url}`} />
-        </figure>
-
-        <h1>{poke.name} </h1>
-      </section>
-    )
+    // debugger;
+    if (!!this.props.poke.name) {
+      let poke = this.props.poke;
+      let moves = poke.moves.join(', ');
+      let items = poke.items.map ((item, idx) => {
+        return <li key={idx}>{item.name}</li>
+      });
+      // debugger;
+      return (
+        <section className="pokemon-detail">
+          <figure>
+            <img src={`${poke.image_url}`} />
+          </figure>
+          <ul>
+            <li>
+              <h1>{poke.name} </h1>
+            </li>
+            <li>Type: {poke.poke_type}</li>
+            <li>Attack: {poke.attack}</li>
+            <li>Defense: {poke.defense}</li>
+            <li>Moves: {moves}</li>
+          </ul>
+          <section className="pokemon-items">
+            <ul>
+              {items}
+            </ul>
+          </section>
+        </section>
+      )
+    } else {
+      return (<div></div>);
+    }
   }
 
 }
